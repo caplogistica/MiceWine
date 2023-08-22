@@ -19,7 +19,7 @@ echo "Baixando o MiceWine Alpha 2..."
 curl -# -L -O https://github.com/KreitinnSoftware/MiceWine/releases/download/v0.0.2/MiceWine-Alpha-2.zip
 
 echo "Extraindo..."
-unzip MiceWine-Alpha-2.zip -d /data/data/com.termux/files/
+unzip -o MiceWine-Alpha-2.zip -d /data/data/com.termux/files/
 
 rm -rf MiceWine-Alpha-2.zip 
 
