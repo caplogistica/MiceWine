@@ -27,3 +27,5 @@ echo -e "MiceWine Alpha 2 - Instalado!\n"
 echo "Pressione qualquer tecla para sair."
 
 read
+
+pkill termux
