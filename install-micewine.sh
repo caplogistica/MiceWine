@@ -15,8 +15,10 @@ case $install in "S"|"s")
 esac
 done
 
+pkg ins wget -y
+
 echo "Baixando o MiceWine Alpha 2..."
-curl -# -O https://github.com/KreitinnSoftware/MiceWine/releases/download/v0.0.2/MiceWine-Alpha-2.zip
+wget https://github.com/KreitinnSoftware/MiceWine/releases/download/v0.0.2/MiceWine-Alpha-2.zip
 
 echo "Extraindo..."
 unzip MiceWine-Alpha-2.zip -d /data/data/com.termux/files/
