@@ -15,6 +15,8 @@ case $install in "S"|"s")
 esac
 done
 
+termux-setup-storage
+
 echo "Baixando o MiceWine Alpha 2..."
 curl -# -L -O https://github.com/KreitinnSoftware/MiceWine/releases/download/v0.0.2/MiceWine-Alpha-2.zip
 
