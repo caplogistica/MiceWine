@@ -27,7 +27,7 @@ echo "Baixando o MiceWine Alpha..."
 case $ver in "1")
 	curl -# -L -O https://github.com/KreitinnSoftware/MiceWine/releases/download/v0.0.2/MiceWine-Alpha-2.zip
  	;;
-  	"2)"
+  	"2")
 	curl -# -L -O https://github.com/KreitinnSoftware/MiceWine/releases/download/v0.0.3/MiceWine-Alpha-V3.zip
 esac
 
