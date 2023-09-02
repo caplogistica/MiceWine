@@ -1,8 +1,13 @@
 #!/data/data/com.termux/files/usr/bin/sh
 while :; do
 clear
-echo -e "[ MiceWine -- Alpha V3 ]\n"
-echo -e "Você realmente deseja instalar o MiceWine Alpha V3? (S/N)\n:"
+echo -e "[ MiceWine -- Alpha ]\n"
+
+echo -e "Escolha uma versão:\n 1) Alpha V2\n 2) Alpha V3"
+
+read ver
+
+echo -e "Você realmente deseja instalar o MiceWine Alpha? (S/N)\n:"
 read install
 
 case $install in "S"|"s")
@@ -17,13 +22,24 @@ done
 
 termux-setup-storage
 
-echo "Baixando o MiceWine Alpha V3..."
-curl -# -L -O https://github.com/KreitinnSoftware/MiceWine/releases/download/v0.0.3/MiceWine-Alpha-V3.zip
+echo "Baixando o MiceWine Alpha..."
+
+case $ver in "1")
+	curl -# -L -O https://github.com/KreitinnSoftware/MiceWine/releases/download/v0.0.2/MiceWine-Alpha-2.zip
+ 	;;
+  	"2)"
+	curl -# -L -O https://github.com/KreitinnSoftware/MiceWine/releases/download/v0.0.3/MiceWine-Alpha-V3.zip
+esac
 
 echo "Extraindo..."
-unzip -o MiceWine-Alpha-V3.zip -d /data/data/com.termux/files/
+case $ver in "1")
+	unzip -o MiceWine-Alpha-2.zip -d /data/data/com.termux/files/
+ 	;;
+  	"2")
+	unzip -o MiceWine-Alpha-V3.zip -d /data/data/com.termux/files/
+esac
 
-rm -rf MiceWine-Alpha-V3.zip 
+rm -rf MiceWine-Alpha-V3.zip MiceWine-Alpha-2.zip
 
 while :; do
 echo -e "Deseja instalar a interface XFCE? (S/N)\n"
@@ -38,14 +54,8 @@ case $xfce in "S"|"s")
 esac
 done
 
-pulseaudio --start --load="module-native-protocol-tcp auth-ip-acl=127.0.0.1 auth-anonymous=1" --exit-idle-time=-1
-termux-x11 :1 &
-
-virgl_test_server_android &
-
-export DISPLAY=:1
-
 echo -e "MiceWine Alpha V3 - Instalado!\n"
+echo "Digite: "exit" e logo após"
 echo "Digite: "micewine" para começar usar!"
 
 exit
