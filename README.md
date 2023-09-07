@@ -7,7 +7,7 @@ To install the Alpha version use on a clean Termux:
 
 `curl -O https://raw.githubusercontent.com/KreitinnSoftware/MiceWine/main/install-micewine.sh; bash install-micewine.sh`
 
-After installed, run ´micewine´ on your termux to open MiceWine.
+After installed, run `micewine` on your termux to open MiceWine.
 
 # Open Source Applications used on MiceWine:
 
