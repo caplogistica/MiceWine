@@ -3,7 +3,7 @@ while :; do
 clear
 echo -e "[ MiceWine -- Alpha ]\n"
 
-echo -e "Escolha uma versão:\n 1) Alpha V2\n 2) Alpha V3\n 3) Alpha V4"
+echo -e "Escolha uma versão:\n 1) Alpha V2\n 2) Alpha V3"
 
 read ver
 
@@ -29,9 +29,6 @@ case $ver in "1")
  	;;
   	"2")
 	curl -# -L -O https://github.com/KreitinnSoftware/MiceWine/releases/download/v0.0.3/MiceWine-Alpha-V3.zip
- 	;;
- 	"3")
-  	curl -# -L -O https://github.com/KreitinnSoftware/MiceWine/releases/download/v0.0.4/MiceWine-Alpha-V4.zip
 esac
 
 echo "Extraindo..."
@@ -41,11 +38,9 @@ case $ver in "1")
   	"2")
 	unzip -o MiceWine-Alpha-V3.zip -d /data/data/com.termux/files/
  	;;
- 	"3")
-  	unzip -o MiceWine-Alpha-V4.zip -d /data/data/com.termux/files/
 esac
 
-rm -rf MiceWine-Alpha-V3.zip MiceWine-Alpha-2.zip MiceWine-Alpha-V4.zip
+rm -rf MiceWine-Alpha-V3.zip MiceWine-Alpha-2.zip
 
 while :; do
 echo -e "Deseja instalar a interface XFCE? (S/N)\n"
