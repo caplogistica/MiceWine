@@ -3,7 +3,7 @@ while :; do
 clear
 echo -e "[ MiceWine -- Alpha ]\n"
 
-echo -e "Escolha uma versão:\n 1) Alpha V2\n 2) Alpha V3\n Alpha V4"
+echo -e "Escolha uma versão:\n 1) Alpha V2\n 2) Alpha V3\n 3) Alpha V4"
 
 read ver
 
