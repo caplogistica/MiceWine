@@ -9,6 +9,8 @@ To install the Alpha version use on a clean Termux:
 
 After installed, run `micewine` on your termux to open MiceWine.
 
+⚠️ Install Termux and Termux-X11 from Releases Page ⚠️
+
 # Open Source Applications used on MiceWine:
 
 - [Box86](https://github.com/ptitSeb/box86)
