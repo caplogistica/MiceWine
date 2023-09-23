@@ -3,7 +3,7 @@ while :; do
 clear
 echo -e "[ MiceWine -- Alpha ]\n"
 
-echo -e "Escolha uma versão:\n 1) Alpha V2\n 2) Alpha V3\n 3) Alpha V4 -- PatchFix 1"
+echo -e "Escolha uma versão:\n 1) Alpha V2\n 2) Alpha V3\n 3) Alpha V4 -- PatchFix 1\n 4) Alpha V5"
 
 read ver
 
@@ -36,6 +36,13 @@ case $ver in "1")
  	;;
   	"3")
    	curl -# -L -O https://github.com/KreitinnSoftware/MiceWine/releases/download/v0.0.4-patchfix1/MiceWine-Alpha-V4-Fix-1.zip
+    	;;
+     	"4")
+      	curl -# -L -O https://github.com/KreitinnSoftware/MiceWine/releases/download/v0.0.5/MiceWine-Alpha-V5.zip
+       	;;
+	*)
+ 	echo MiceWine Alpha V$(($ver+1)) $SUFFIX não está disponivel.
+  	exit
 esac
 
 echo "Extraindo..."
@@ -47,9 +54,12 @@ case $ver in "1")
  	;;
   	"3")
    	unzip -o MiceWine-Alpha-V4-Fix-1.zip -d /data/data/com.termux/files/
+    	;;
+     	"4")
+      	unzip -o MiceWine-Alpha-V5.zip -d /data/data/com.termux/files/
 esac
 
-rm -rf MiceWine-Alpha-V3.zip MiceWine-Alpha-2.zip MiceWine-Alpha-V4-Fix-1.zip
+rm -rf MiceWine-Alpha-V3.zip MiceWine-Alpha-2.zip MiceWine-Alpha-V4-Fix-1.zip MiceWine-Alpha-V5.zip
 
 while :; do
 echo -e "Deseja instalar a interface XFCE? (S/N) (Opcional)\n"
@@ -65,7 +75,8 @@ esac
 done
 
 echo -e "MiceWine Alpha V$(($ver+1)) $SUFFIX - Instalado!\n"
-echo "Digite: "exit" e logo após"
 echo "Digite: "micewine" para começar usar!"
 
-exit
+sleep 2
+
+logout
