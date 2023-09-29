@@ -3,11 +3,11 @@ while :; do
 clear
 echo -e "[ MiceWine -- Installer ]\n"
 
-echo -e "Escolha uma versão:\n 2) Alpha V2\n 3) Alpha V3\n 4) Alpha V4 -- PatchFix 1\n 5) Alpha V5"
+echo -e "Escolha uma versão:\n 2) Alpha V2\n 3) Alpha V3\n 4) Alpha V4 -- PatchFix 1\n 5) Alpha V5\n 6) Alpha V5.1"
 
 read ver
 
-case $ver in "2"|"3"|"4"|"5")
+case $ver in "2"|"3"|"4"|"5"|"6")
 	break
 	;;
 	*)
