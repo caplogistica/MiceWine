@@ -18,6 +18,9 @@ done
 while :; do
 case $ver in "4")
 	SUFFIX="PatchFix 1"
+ 	;;
+	"5")
+ 	ver="5.1"
 esac
 
 echo -e "Você realmente deseja instalar o MiceWine Alpha V$ver $SUFFIX? (S/N)\n:"
@@ -45,9 +48,12 @@ case $ver in "2")
  	;;
   	"4")
    	curl -# -L -O https://github.com/KreitinnSoftware/MiceWine/releases/download/v0.0.4-patchfix1/MiceWine-Alpha-V4-Fix-1.zip
-    ;;
-    "5")
-    curl -# -L -O https://github.com/KreitinnSoftware/MiceWine/releases/download/v0.0.5/MiceWine-Alpha-V5.zip
+    	;;
+    	"5")
+    	curl -# -L -O https://github.com/KreitinnSoftware/MiceWine/releases/download/v0.0.5/MiceWine-Alpha-V5.zip
+    	;;
+    	"5.1")
+    	curl -# -L -O https://github.com/KreitinnSoftware/MiceWine/releases/download/v0.0.5.1/MiceWine-Alpha-V5.1.zip
 esac
 
 echo "Extraindo..."
@@ -59,12 +65,15 @@ case $ver in "2")
  	;;
   	"4")
    	unzip -o MiceWine-Alpha-V4-Fix-1.zip -d /data/data/com.termux/files/
-    ;;
+    	;;
  	"5")
   	unzip -o MiceWine-Alpha-V5.zip -d /data/data/com.termux/files/
+   	;;
+    	"5.1")
+    	unzip -o MiceWine-Alpha-V5.1.zip -d /data/data/com.termux/files/
 esac
 
-rm -rf MiceWine-Alpha-V3.zip MiceWine-Alpha-2.zip MiceWine-Alpha-V4-Fix-1.zip MiceWine-Alpha-V5.zip
+rm -rf install-micewine.sh MiceWine-Alpha-V3.zip MiceWine-Alpha-2.zip MiceWine-Alpha-V4-Fix-1.zip MiceWine-Alpha-V5.zip MiceWine-Alpha-V5.1.zip
 
 while :; do
 echo -e "Deseja instalar a interface XFCE? (S/N) (Opcional)\n"
