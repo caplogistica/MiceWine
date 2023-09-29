@@ -19,7 +19,7 @@ while :; do
 case $ver in "4")
 	SUFFIX="PatchFix 1"
  	;;
-	"5")
+	"6")
  	ver="5.1"
 esac
 
