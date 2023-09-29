@@ -35,7 +35,7 @@ done
 
 termux-setup-storage
 
-echo "Baixando o MiceWine Alpha V$(($ver+1)) $SUFFIX..."
+echo "Baixando o MiceWine Alpha V$ver $SUFFIX..."
 
 case $ver in "2")
 	curl -# -L -O https://github.com/KreitinnSoftware/MiceWine/releases/download/v0.0.2/MiceWine-Alpha-2.zip
