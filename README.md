@@ -14,6 +14,17 @@ After installed, run `micewine` on your termux to open MiceWine.
 
 ⚠️ Install Termux and Termux-X11 from Releases Page ⚠️
 
+### Compatible Android Versions
+
+| Android | 
+| ------------------------ |
+| Android 9 | Unsupported |
+| Android 10 | Supported |
+| Android 11 | Supported |
+| Android 12 | Supported |
+| Android 13 | Supported |
+| Android 14 | Not tested |
+
 # Open Source Applications used on MiceWine:
 
 - [Box86](https://github.com/ptitSeb/box86)
