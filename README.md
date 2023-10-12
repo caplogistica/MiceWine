@@ -25,6 +25,16 @@ After installed, run `micewine` on your termux to open MiceWine.
 | Android 13 | Supported   | 
 | Android 14 | Not tested  |
 
+### Compatible GPUs
+
+| GPU        | Support             | Driver            |
+| ---------- | ------------------- | ----------------- |
+| Adreno 7xx | Parcially Supported | VirGL/Zink        |
+| Adreno 6xx | Supported           | Turnip/VirGL/Zink |
+| Others     | Supported           | VirGL/Zink        |
+
+⚠️ In theory, any GPU that supports Vulkan should work with Zink, and any GPU should work through VirGL. ⚠️
+
 # Open Source Applications used on MiceWine:
 
 - [Box86](https://github.com/ptitSeb/box86)
