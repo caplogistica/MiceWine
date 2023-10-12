@@ -16,7 +16,7 @@ After installed, run `micewine` on your termux to open MiceWine.
 
 ### Compatible Android Versions
 
-| Android | 
+| Android | Support |
 | ------------------------ |
 | Android 9 | Unsupported |
 | Android 10 | Supported |
