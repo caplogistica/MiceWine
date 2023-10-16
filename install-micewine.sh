@@ -89,13 +89,13 @@ echo -e "Deseja instalar a interface XFCE? (Opcional)\n" >> $TMPDIR/.dialoginfo
 
 dialog Não Sim
 
-case $(cat $TMPDIR/.dialogout)in "1")
+case $(cat $TMPDIR/.dialogout) in "1")
 	;;
 	"2")
 	pkg ins xfce4 firefox -y
 esac
 
-echo -e "MiceWine Alpha V$ver $SUFFIX - Instalado!\n"
+echo -e "MiceWine Instalado!\n"
 echo -e "Digite 'micewine' para começar a usar!"
 
 source $PREFIX/etc/termux-login.sh
