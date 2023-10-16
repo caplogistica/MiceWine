@@ -5,7 +5,7 @@ case $(uname -m) in "aarch64")
 	;;
 	*)
 	curl -# -L -O https://github.com/KreitinnSoftware/MiceWine/raw/main/bin/dialog
-	chmod +x dialog64
+	chmod +x dialog
 esac
 
 clear
