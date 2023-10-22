@@ -96,6 +96,6 @@ case $(cat $TMPDIR/.dialogout) in "1")
 esac
 
 echo -e "MiceWine Instalado!\n"
-echo -e "Digite 'exit', abra novamente o Termux, Digite 'micewine' para executar o MiceWine!"
+echo -e "Digite 'micewine' para executar o MiceWine!"
 
 exit
