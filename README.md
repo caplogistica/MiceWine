@@ -1,4 +1,4 @@
-![MiceWine Logo](img/MiceWineLogo.png "MiceWine Logo")
+![MiceWine Logo](img/MiceWine-Logo-Xmas.png "MiceWine Logo")
 
 # MiceWine
 
