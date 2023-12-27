@@ -114,7 +114,7 @@ rm -rf *.zip dialog*
 
 echo -e "$INSTALLXFCE" > $TMPDIR/.dialoginfo
 
-dialog $NOYES
+micewine-dialog $NOYES
 
 case $(cat $TMPDIR/.dialogout) in "1")
 	;;
