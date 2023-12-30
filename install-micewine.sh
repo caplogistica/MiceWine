@@ -86,31 +86,31 @@ case $(cat $TMPDIR/.dialogout) in "10")
    	curl -# -L -O https://github.com/KreitinnSoftware/MiceWine/releases/download/v0.0.6.1/MiceWine-Alpha-V6.1.zip
 esac
 
-case $(cat $TMPDIR/.dialogout) in "9")
+case $(cat $TMPDIR/.dialogout) in "10")
 	unzip -o MiceWine-Alpha-2.zip -d /data/data/com.termux/files/
  	;;
- 	"8")
+ 	"9")
 	unzip -o MiceWine-Alpha-V3.zip -d /data/data/com.termux/files/
 	;;
-	"7")
+	"8")
 	unzip -o MiceWine-Alpha-V4.zip -d /data/data/com.termux/files/
 	;;
-	"6")
+	"7")
 	unzip -o MiceWine-Alpha-V4-Fix-1.zip -d /data/data/com.termux/files/
 	;;
-	"5")
+	"6")
 	unzip -o MiceWine-Alpha-V5.zip -d /data/data/com.termux/files/
 	;;
-	"4")
+	"5")
 	unzip -o MiceWine-Alpha-V5.1.zip -d /data/data/com.termux/files/
 	;;
-	"3")
+	"4")
 	unzip -o MiceWine-Alpha-V5.2.zip -d /data/data/com.termux/files/
 	;;
-	"2")
+	"3")
 	unzip -o MiceWine-Alpha-V5.3.zip -d /data/data/com.termux/files/
  	;;
- 	"1")
+ 	"2")
   	unzip -o MiceWine-Alpha-V6.0-Xmas.zip -d /data/data/com.termux/files/
    	;;
     	"1")
