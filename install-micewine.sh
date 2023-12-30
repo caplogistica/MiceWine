@@ -23,14 +23,14 @@ case $(cat $TMPDIR/.dialogout) in "1")
 	export CHOICE_VERSION="[ MiceWine -- Installer ]\nChoice a version:"
  	export DOWNLOADING="Downloading"
   	export INSTALLXFCE="[ MiceWine -- Installer ]\nDo you want to install XFCE? (Optional)"
-   	export INSTALLDONE="MiceWine Installed Successfully!\nType 'micewine' to start MiceWine.\nHappy Christmas!"
+   	export INSTALLDONE="MiceWine Installed Successfully!\nType 'micewine' to start MiceWine.\nHappy New Year!"
     	export NOYES="No Yes"
  	;;
   	"2")
    	export CHOICE_VERSION="[ MiceWine -- Instalador ]\nEscolha uma versão:"
      	export DOWNLOADING="Baixando"
 	export INSTALLXFCE="[ MiceWine -- Instalador ]\nDeseja instalar o XFCE? (Opcional)"
- 	export INSTALLDONE="MiceWine foi Instalado com Sucesso!\nDigite 'micewine' para inciar o MiceWine.\nFeliz Natal!"
+ 	export INSTALLDONE="MiceWine foi Instalado com Sucesso!\nDigite 'micewine' para inciar o MiceWine.\nFeliz Ano Novo!"
   	export NOYES="Não Sim"
 esac
 
