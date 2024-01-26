@@ -22,48 +22,48 @@ case $OS_ARCH in "arm64")
 esac
 
 case $(cat $TMPDIR/.dialogout) in "1")
-	export CHOICE_VERSION="[ MiceWine -- Installer ]\nChoice a version:"
+	export CHOICE_VERSION="[ MiceWine -- Installer ]\nChoice a version:\n"
  	export DOWNLOADING="Downloading"
   	export INSTALLXFCE="[ MiceWine -- Installer ]\nDo you want to install XFCE? (Optional)"
    	export INSTALLDONE="MiceWine Installed Successfully!\nType 'micewine' to start MiceWine.\nHappy New Year!"
-    	export NOYES="No Yes"
+    export NOYES="No Yes"
 	export CHECKINGSHA512SUM="Checking SHA512SUM..."
 	export SHA512SUM_FAILED="SHA512SUM failed. Please restart the installation."
-	export 32OR64_VERSION="[ MiceWine -- Installer ]\nDo you want to install 32bits version or 64bits version?"
+	export INSTALL_32OR64_VERSION="[ MiceWine -- Installer ]\nDo you want to install 32bits version or 64bits version?\n"
  	;;
   	"2")
-   	export CHOICE_VERSION="[ MiceWine -- Instalador ]\nEscolha uma versão:"
-     	export DOWNLOADING="Baixando"
+   	export CHOICE_VERSION="[ MiceWine -- Instalador ]\nEscolha uma versão:\n"
+	export DOWNLOADING="Baixando"
 	export INSTALLXFCE="[ MiceWine -- Instalador ]\nDeseja instalar o XFCE? (Opcional)"
  	export INSTALLDONE="MiceWine foi Instalado com Sucesso!\nDigite 'micewine' para inciar o MiceWine.\nFeliz Ano Novo!"
   	export NOYES="Não Sim"
 	export CHECKINGSHA512SUM="Checando SHA512SUM..."
 	export SHA512SUM_FAILED="SHA512SUM falhou. Por favor tente de novo."
-	export 32OR64_VERSION="[ MiceWine -- Instalador ]\nVocê quer instalar a versão 32bits ou 64bits?"
+	export INSTALL_32OR64_VERSION="[ MiceWine -- Instalador ]\nVocê quer instalar a versão 32bits ou 64bits?\n"
 esac
 
-echo -e "$CHOICE_VERSION" > $TMPDIR/.dialoginfo
-
 case $OS_ARCH in "arm64")
-	echo -e "$32OR64_VERSION" > "$TMPDIR/.dialoginfo"
+	echo -e "$INSTALL_32OR64_VERSION" > "$TMPDIR/.dialoginfo"
 	./dialog64 64///bits 32///bits
  	case $(cat $TMPDIR/.dialogout) in "1")
 		IS64BITS=1
 	esac
 esac
 
-32BITS_RELEASES="Alpha///V6.2 Alpha///V6.1 Alpha///V6.0 Alpha///V5.3 Alpha///V5.2 Alpha///V5.1 Alpha///V5 Alpha///V4///PatchFix///1 Alpha///V4 Alpha///V3 Alpha///V2"
-64BITS_RELEASES="Alpha///V7.0"
+LIST_32BITS_RELEASES="Alpha///V6.2 Alpha///V6.1 Alpha///V6.0 Alpha///V5.3 Alpha///V5.2 Alpha///V5.1 Alpha///V5 Alpha///V4///PatchFix///1 Alpha///V4 Alpha///V3 Alpha///V2"
+LIST_64BITS_RELEASES="Alpha///V7.0"
+
+echo -e "$CHOICE_VERSION" > $TMPDIR/.dialoginfo
 
 case $IS64BITS in "1")
-	./dialog64 $64BITS_RELEASES
+	./dialog64 "$LIST_64BITS_RELEASES"
 	;;
 	*)
 	case $OS_ARCH in "arm64")
-		./dialog64 $32BITS_RELEASES
+		./dialog64 "$LIST_32BITS_RELEASES"
 		;;
 		*)
-		./dialog $32BITS_RELEASES
+		./dialog "$LIST_32BITS_RELEASES"
 	esac
 esac
 
@@ -75,11 +75,12 @@ case $IS64BITS in "1")
 		curl -# -L -O https://github.com/KreitinnSoftware/MiceWine/releases/download/v0.0.7-x64/MiceWine-Alpha-V7.0-ARM64.zip
 	esac
 	;;
+	*)
 	case $(cat $TMPDIR/.dialogout) in "11")
     		echo "$DOWNLOADING MiceWine Alpha V2..."	
     		curl -# -L -O https://github.com/KreitinnSoftware/MiceWine/releases/download/v0.0.2/MiceWine-Alpha-2.zip
     		;;
-   		"10")	
+   		"10")
     		echo "$DOWNLOADING MiceWine Alpha V3..."
     		curl -# -L -O https://github.com/KreitinnSoftware/MiceWine/releases/download/v0.0.3/MiceWine-Alpha-V3.zip
     		;;
@@ -129,6 +130,7 @@ case $IS64BITS in "1")
 		FILESHA512SUM=$(sha512sum MiceWine-Alpha-V7.0-ARM64.zip | cut -d" " -f 1)
 	esac
 	;;
+	*)
 	case $(cat $TMPDIR/.dialogout) in "1") 
 		SHA512SUM="de0c4986aed2105a6864e8efc91aed0a88b40e4bd36cc26e1ae2cf0f701bc210ed509fdbd40f00d0d801fe5d422959f854010816c511aabed7b2f796b8f88378"
  		FILESHA512SUM=$(sha512sum MiceWine-Alpha-V6.2.zip | cut -d" " -f 1)
@@ -186,6 +188,7 @@ case $IS64BITS in "1")
 		unzip -o MiceWine-Alpha-V7.0-ARM64.zip -d /data/data/com.termux/files/
 	esac
 	;;
+	*)
 	case $(cat $TMPDIR/.dialogout) in "11")
 		unzip -o MiceWine-Alpha-2.zip -d /data/data/com.termux/files/
 	 	;;
