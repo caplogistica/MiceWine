@@ -51,19 +51,19 @@ case $OS_ARCH in "arm64")
 esac
 
 LIST_32BITS_RELEASES="Alpha///V6.2 Alpha///V6.1 Alpha///V6.0 Alpha///V5.3 Alpha///V5.2 Alpha///V5.1 Alpha///V5 Alpha///V4///PatchFix///1 Alpha///V4 Alpha///V3 Alpha///V2"
-LIST_64BITS_RELEASES="Alpha///V7.0"
+LIST_64BITS_RELEASES="Alpha///V7.1 Alpha///V7.0"
 
 echo -e "$CHOICE_VERSION" > $TMPDIR/.dialoginfo
 
 case $IS64BITS in "1")
-	./dialog64 "$LIST_64BITS_RELEASES"
+	./dialog64 $LIST_64BITS_RELEASES
 	;;
 	*)
 	case $OS_ARCH in "arm64")
-		./dialog64 "$LIST_32BITS_RELEASES"
+		./dialog64 $LIST_32BITS_RELEASES
 		;;
 		*)
-		./dialog "$LIST_32BITS_RELEASES"
+		./dialog $LIST_32BITS_RELEASES
 	esac
 esac
 
