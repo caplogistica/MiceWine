@@ -194,6 +194,9 @@ fi
 
 case $IS64BITS in "1")
 	case $(cat $TMPDIR/.dialogout) in "1")
+		unzip -o MiceWine-Alpha-V7.1-ARM64.zip -d /data/data/com.termux/files/
+		;;
+		"2")
 		unzip -o MiceWine-Alpha-V7.0-ARM64.zip -d /data/data/com.termux/files/
 	esac
 	;;
