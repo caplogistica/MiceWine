@@ -70,8 +70,13 @@ esac
 termux-setup-storage
 
 case $IS64BITS in "1")
-	case $(cat $TMPDIR/.dialogout) in "1")
-		echo "$DOWNLOADING MiceWine Alpha V7..."
+	case $(cat $TMPDIR/.dialogout) in 
+ 		"1")
+		echo "$DOWNLOADING MiceWine Alpha V7.1..."
+		curl -# -L -O https://github.com/KreitinnSoftware/MiceWine/releases/download/v0.0.7.1-x64/MiceWine-Alpha-V7.1-ARM64.zip
+		;;
+		"2")
+		echo "$DOWNLOADING MiceWine Alpha V7.0..."
 		curl -# -L -O https://github.com/KreitinnSoftware/MiceWine/releases/download/v0.0.7-x64/MiceWine-Alpha-V7.0-ARM64.zip
 	esac
 	;;
@@ -126,6 +131,10 @@ echo "$CHECKINGSHA512SUM..."
 
 case $IS64BITS in "1")
 	case $(cat $TMPDIR/.dialogout) in "1")
+		SHA512SUM="bceb429bdeca4256300dda55e18f1f1af977023c71ce70d72837d7eafb3e9e702699180309a41dd9608f9ff16a6bf2f861bbcbd70246dfdffdf4e2f36f989480"
+		FILESHA512SUM=$(sha512sum MiceWine-Alpha-V7.1-ARM64.zip | cut -d" " -f 1)
+		;;
+		"2")
 		SHA512SUM="07562e00872abf2d247e8ab9a165f5b1d67e07803504f313ffc872ae8721ffecb34a5f8fc9cdf5eb737b960f63758b7b143e73ae9d29ce45a16742edf9caef4f"
 		FILESHA512SUM=$(sha512sum MiceWine-Alpha-V7.0-ARM64.zip | cut -d" " -f 1)
 	esac
