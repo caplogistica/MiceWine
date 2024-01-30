@@ -23,7 +23,7 @@ After installed, run `micewine` on your termux to open MiceWine.
 | Android 11 | Supported   |
 | Android 12 | Supported   |
 | Android 13 | Supported   | 
-| Android 14 | Not tested  |
+| Android 14 | Supported   |
 
 ### Compatible GPUs
 
