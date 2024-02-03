@@ -51,7 +51,7 @@ case $OS_ARCH in "arm64")
 esac
 
 LIST_32BITS_RELEASES="Alpha///V6.2 Alpha///V6.1 Alpha///V6.0 Alpha///V5.3 Alpha///V5.2 Alpha///V5.1 Alpha///V5 Alpha///V4///PatchFix///1 Alpha///V4 Alpha///V3 Alpha///V2"
-LIST_64BITS_RELEASES="Alpha///V7.1 Alpha///V7.0"
+LIST_64BITS_RELEASES="Alpha///V7.2 Alpha///V7.1 Alpha///V7.0"
 
 echo -e "$CHOICE_VERSION" > $TMPDIR/.dialoginfo
 
@@ -71,11 +71,15 @@ termux-setup-storage
 
 case $IS64BITS in "1")
 	case $(cat $TMPDIR/.dialogout) in 
- 		"1")
+		"1")
+		echo "$DOWNLOADING MiceWine Alpha V7.2..."
+  		curl -# -L -O https://github.com/KreitinnSoftware/MiceWine/releases/download/v0.0.7.2-x64/MiceWine-Alpha-V7.2-ARM64.zip
+		;;
+ 		"2")
 		echo "$DOWNLOADING MiceWine Alpha V7.1..."
 		curl -# -L -O https://github.com/KreitinnSoftware/MiceWine/releases/download/v0.0.7.1-x64/MiceWine-Alpha-V7.1-ARM64.zip
 		;;
-		"2")
+		"3")
 		echo "$DOWNLOADING MiceWine Alpha V7.0..."
 		curl -# -L -O https://github.com/KreitinnSoftware/MiceWine/releases/download/v0.0.7-x64/MiceWine-Alpha-V7.0-ARM64.zip
 	esac
@@ -130,11 +134,16 @@ esac
 echo "$CHECKINGSHA512SUM..."
 
 case $IS64BITS in "1")
-	case $(cat $TMPDIR/.dialogout) in "1")
+	case $(cat $TMPDIR/.dialogout) in 
+		"1")
+		SHA512SUM="fc28dbe0b7a20bf001ee6e598f6ed84003e7c0ccfc155a2f97e915de5ebe7a37ed012f01b376aa8ed963cdd24eb2cf5dd6290e94fea5fb94f64000f6c7bd34fa"
+		FILESHA512SUM=$(sha512sum MiceWine-Alpha-V7.2-ARM64.zip | cut -d" " -f 1)
+		;;
+		"2")
 		SHA512SUM="bceb429bdeca4256300dda55e18f1f1af977023c71ce70d72837d7eafb3e9e702699180309a41dd9608f9ff16a6bf2f861bbcbd70246dfdffdf4e2f36f989480"
 		FILESHA512SUM=$(sha512sum MiceWine-Alpha-V7.1-ARM64.zip | cut -d" " -f 1)
 		;;
-		"2")
+		"3")
 		SHA512SUM="07562e00872abf2d247e8ab9a165f5b1d67e07803504f313ffc872ae8721ffecb34a5f8fc9cdf5eb737b960f63758b7b143e73ae9d29ce45a16742edf9caef4f"
 		FILESHA512SUM=$(sha512sum MiceWine-Alpha-V7.0-ARM64.zip | cut -d" " -f 1)
 	esac
@@ -193,7 +202,11 @@ if [ "$SHA512SUM" != "$FILESHA512SUM" ]; then
 fi
 
 case $IS64BITS in "1")
-	case $(cat $TMPDIR/.dialogout) in "1")
+	case $(cat $TMPDIR/.dialogout) in 
+		"1")
+		unzip -o MiceWine-Alpha-V7.2-ARM64.zip -d /data/data/com.termux/files/
+		;;
+		"2")
 		unzip -o MiceWine-Alpha-V7.1-ARM64.zip -d /data/data/com.termux/files/
 		;;
 		"2")
