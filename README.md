@@ -8,7 +8,7 @@ It uses a customized build of Wine compiled for Android and Box86 to run in the 
 
 To install the Alpha version use on a clean Termux:
 
-`curl -O https://raw.githubusercontent.com/KreitinnSoftware/MiceWine/main/install-micewine.sh; bash install-micewine.sh; . $PREFIX/etc/termux-login.sh`
+```curl -O https://raw.githubusercontent.com/KreitinnSoftware/MiceWine/main/install-micewine.sh; bash install-micewine.sh; . $PREFIX/etc/termux-login.sh```
 
 After installed, run `micewine` on your termux to open MiceWine.
 
