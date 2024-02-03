@@ -1,2 +1,4 @@
 #!/data/data/com.termux/files/usr/bin/bash
-echo "Testing"
+INSTALLED_MICEWINE_VERSION=$(micewine --version)
+
+echo "Installed Version: $INSTALLED_MICEWINE_VERSION"
