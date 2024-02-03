@@ -50,6 +50,11 @@ if [ $IS64BITS == 1 ]; then
       ;;
       "2")
       exit
+    esac
+    ;;
+    *)
+    echo "Your MiceWine installation is out of date and cannot be upgraded now."
+    exit
   esac
 else 
   case $INSTALLED_MICEWINE_VERSION in *"$LATEST_MICEWINE_32_VERSION"*)
@@ -57,7 +62,7 @@ else
     exit
     ;;
     *)
-    echo "Your MiceWine installation is out of date"
+    echo "Your MiceWine installation is out of date and cannot be upgraded now."
     exit
   esac
 fi
