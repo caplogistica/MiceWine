@@ -12,6 +12,12 @@ To install the Alpha version use on a clean Termux:
 curl -O https://raw.githubusercontent.com/KreitinnSoftware/MiceWine/main/install-micewine.sh; bash install-micewine.sh; . $PREFIX/etc/termux-login.sh
 ```
 
+If you want to update MiceWine (Only need the manual command in versions older than V7.2 and update is only supported now in V7.1)
+
+```bash
+curl -O https://raw.githubusercontent.com/KreitinnSoftware/MiceWine/main/update-micewine.sh
+```
+
 After installed, run `micewine` on your termux to open MiceWine.
 
 ⚠️ Install Termux and Termux-X11 from Releases Page ⚠️
